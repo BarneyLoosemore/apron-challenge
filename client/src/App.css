@@ -54,31 +54,3 @@ dialog::backdrop {
   place-items: center;
   gap: 0.5rem;
 }
-
-.sorting-arrows {
-  display: grid;
-  align-items: center;
-  grid-template-rows: 10px 10px;
-  button {
-    background: none;
-    border: none;
-    height: min-content;
-  }
-  button:focus {
-    filter: brightness(0.8);
-  }
-}
-
-.edit-button {
-  background: none;
-  border: 2px solid rgba(236, 235, 227, 1);
-  padding: 0.25rem 1rem;
-  border-radius: 0.5rem;
-  color: black;
-  font-weight: 700;
-}
-
-.delete-button {
-  background: none;
-  border: none;
-}

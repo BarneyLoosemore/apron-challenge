@@ -61,6 +61,7 @@ export const UserTable = ({
         <tbody>
           {sortedUsers.map((user) => (
             <TableRow
+              key={user.id}
               user={user}
               openEditUserModal={openEditUserModal}
               onDeleteUser={onDeleteUser}
@@ -83,7 +84,7 @@ const TableHeader = ({
     <tr>
       {TABLE_ROW_HEADERS.map(({ name, label }) => (
         <th key={name}>
-          {label}
+          <span>{label}</span>
           <ColumnSort
             onSortAsc={() => sortUsersAsc(name)}
             onSortDesc={() => sortUsersDesc(name)}
@@ -125,14 +126,17 @@ const ColumnSort = ({
   onSortAsc: () => void;
   onSortDesc: () => void;
 }) => (
-  <div className="sorting-arrows">
-    <button onClick={onSortAsc} aria-label="Sort asc">
+  <>
+    <button onClick={onSortAsc} aria-label="Sort asc" className="sorting-arrow">
       <Icon name="upArrow" />
     </button>
-    <button onClick={onSortDesc} aria-label="Sort desc">
+    <button
+      onClick={onSortDesc}
+      aria-label="Sort desc"
+      className="sorting-arrow">
       <Icon name="downArrow" />
     </button>
-  </div>
+  </>
 );
 
 const UserActions = ({
@@ -142,20 +146,16 @@ const UserActions = ({
   onEdit: () => void;
   onDelete: () => void;
 }) => (
-  <div className="user-actions">
-    <td>
-      <button type="button" className="edit-button" onClick={onEdit}>
+  <>
+    <td className="edit">
+      <button type="button" onClick={onEdit}>
         Edit
       </button>
     </td>
-    <td>
-      <button
-        type="button"
-        onClick={onDelete}
-        className="delete-button"
-        aria-label="Delete user">
+    <td className="delete">
+      <button type="button" onClick={onDelete} aria-label="Delete user">
         <Icon name="bin" />
       </button>
     </td>
-  </div>
+  </>
 );
