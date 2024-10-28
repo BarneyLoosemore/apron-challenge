@@ -1,0 +1,67 @@
+form {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 1rem;
+  margin: 2rem;
+}
+
+.field {
+  display: grid;
+  grid-column: span 2;
+  font-family: "DM Sans", sans-serif;
+  gap: 0.5rem;
+  input,
+  select {
+    padding: 0.875rem 0.75rem;
+    border-radius: 0.5rem;
+    border: 2px solid var(--input-border);
+    margin-bottom: 1px;
+    font-size: 1rem;
+  }
+
+  input.error,
+  select.error {
+    border-color: var(--border-error);
+  }
+
+  label {
+    color: var(--field-label);
+  }
+
+  select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 8L0 0H12L6 8Z' fill='black'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+  }
+}
+
+.close-dialog-button {
+  position: fixed;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.cancel-button,
+.submit-button {
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+}
+
+.cancel-button {
+  background: none;
+  border: 2px solid rgba(236, 235, 227, 1);
+  color: var(--text-secondary);
+}
+
+.submit-button {
+  border: none;
+  background: black;
+  color: white;
+}

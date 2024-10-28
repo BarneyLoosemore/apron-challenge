@@ -1,0 +1,46 @@
+@font-face {
+  font-family: "DM Sans";
+  src: url("/fonts/DMSans-Variable.ttf") format("truetype");
+}
+
+* {
+  font-family: "DM Sans", sans-serif;
+}
+
+:root {
+  --field-label: rgba(112, 109, 92, 1);
+  --input-border: rgba(223, 221, 211, 1);
+  --text-error: rgba(203, 37, 37, 1);
+  --border-error: rgba(229, 113, 113, 1);
+  @media (max-width: 768px) {
+    font-size: 62.5%;
+  }
+}
+
+body {
+  margin: 0;
+  background-color: rgba(250, 249, 242, 1);
+}
+
+p,
+h1 {
+  margin: 0;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+button {
+  cursor: pointer;
+  transition: opacity 0.15s ease-in-out;
+  &:hover {
+    opacity: 0.8;
+  }
+}

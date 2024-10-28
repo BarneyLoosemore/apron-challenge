@@ -1,0 +1,34 @@
+.table-container {
+  grid-area: table;
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 0 0.1rem rgba(0, 0, 0, 0.1);
+  padding: min(2rem, 2%);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  tr {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr) minmax(100px, 1fr);
+    align-items: center;
+    justify-items: start;
+    padding: min(1rem, 1%);
+  }
+  tr:not(:last-child) {
+    border-bottom: 1px solid rgba(236, 235, 227, 1);
+  }
+  th {
+    color: rgba(112, 109, 92, 1);
+    font-weight: 400;
+    display: flex;
+    place-items: center;
+  }
+}
+
+.user-actions {
+  display: grid;
+  grid-template-columns: repeat(2, min-content);
+  gap: 0.5rem;
+}
